@@ -1,0 +1,21 @@
+/* Regla 3: Todos los demás párrafos deben tener un color en particular */
+p {
+    color: #4a4a4a; /* Un gris oscuro para que sea fácil de leer */
+}
+
+/* Regla 1: Un párrafo debe tener color de letra diferente usando #id */
+#parrafo-unico {
+    color: #e74c3c; /* Un tono rojo */
+}
+
+/* Regla 2: Algunos párrafos deben tener un color de letra usando .class */
+.texto-resaltado {
+    color: #2980b9; /* Un tono azul */
+}
+
+/* Regla 4: Las imágenes de todas las páginas deben ser circulares */
+img {
+    border-radius: 50%;
+    object-fit: cover; /* Asegura que la foto no se deforme si no es un cuadrado perfecto */
+    aspect-ratio: 1/1; /* Fuerza a que sea un cuadrado antes de redondearse */
+}
