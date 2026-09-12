@@ -40,20 +40,18 @@
             <div class="card shadow"> <!-- Esto crea un cuadro con sombra -->
                 <div class="card-body">
                     <h3 class="card-title text-center mb-4">Iniciar Sesión</h3>
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-label">Username:</label>
-                            <!-- form-control hace que la caja de texto se vea moderna -->
-                            <input type="text" class="form-control" name="username" placeholder="Ingresa tu usuario">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Password:</label>
-                            <input type="password" class="form-control" name="password" placeholder="Ingresa tu contraseña">
-                        </div>
-                        <div class="d-grid">
-                            <!-- Clases de Bootstrap para un botón atractivo -->
-                            <button type="submit" class="btn btn-primary">Entrar</button>
-                        </div>
+                    <form id="formularioLogin">
+                            <div class="mb-3">
+                                <label class="form-label">Username:</label>
+                                <input type="text" class="form-control" id="usuario" placeholder="Ingresa tu usuario">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password:</label>
+                                <input type="password" class="form-control" id="contrasena" placeholder="Ingresa tu contraseña">
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Entrar</button>
+                            </div>
                     </form>
                 </div>
             </div>
@@ -61,5 +59,6 @@
     </div>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

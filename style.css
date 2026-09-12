@@ -18,4 +18,4 @@ img {
     border-radius: 50%;
     object-fit: cover; /* Asegura que la foto no se deforme si no es un cuadrado perfecto */
     aspect-ratio: 1/1; /* Fuerza a que sea un cuadrado antes de redondearse */
-}
+}   
