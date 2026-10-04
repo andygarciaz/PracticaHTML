@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Verificamos si estamos en la página de login antes de agregar el evento
     if(loginForm) {
-        loginForm.addEventListener('submit', function(evento) {
+        loginForm.addEventListener('submit', async function(evento) {
             evento.preventDefault(); // Esto evita que la página se recargue sola al dar clic
             
             // Obtenemos lo que el usuario escribió
@@ -14,12 +14,33 @@ document.addEventListener('DOMContentLoaded', function() {
             const passwordIngresado = document.getElementById('contrasena').value;
             
             // Validamos las credenciales (puedes cambiar "admin" y "1234" por lo que quieras)
-            if (usuarioIngresado === "admin" && passwordIngresado === "1234") {
-                // Si es correcto, lo mandamos a la página de perfil
-                window.location.href = "profile.html";
-            } else {
-                // Si es incorrecto, mostramos un error
-                alert("Error: Usuario o contraseña incorrectos. Intenta de nuevo.");
+            try {
+                const respuesta = await fetch("http://localhost:4000/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        username: usuarioIngresado,
+                        password: passwordIngresado
+                    })
+                });
+
+                const datos = await respuesta.json();
+
+                if (respuesta.ok && datos.login) {
+                    // Guardamos información básica del usuario en el navegador
+                    localStorage.setItem("usuarioActual", JSON.stringify(datos.user));
+
+                    // Redirigimos al perfil
+                    window.location.href = "profile.html";
+                } else {
+                    alert(datos.message || "Usuario o contraseña incorrectos.");
+                }
+            } catch (error) {
+                console.error("Error al conectar con el backend:", error);
+
+                alert("No se pudo conectar con el servidor.");
             }
         });
     }

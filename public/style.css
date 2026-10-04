@@ -19,3 +19,67 @@ img {
     object-fit: cover; /* Asegura que la foto no se deforme si no es un cuadrado perfecto */
     aspect-ratio: 1/1; /* Fuerza a que sea un cuadrado antes de redondearse */
 }   
+
+body {
+    background-color: #f4f6f9;
+}
+
+.navbar-brand {
+    letter-spacing: 0.5px;
+}
+
+.card {
+    border-radius: 16px;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.btn {
+    border-radius: 9px;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: -0.3px;
+}
+
+img.rounded-circle {
+    object-fit: cover;
+}
+
+.login-icon {
+    font-size: 3rem;
+}
+
+body {
+    background-color: #f4f6f9;
+}
+
+.card {
+    border-radius: 18px;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.btn {
+    border-radius: 10px;
+}
